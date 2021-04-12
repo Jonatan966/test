@@ -1,6 +1,7 @@
 actions:
     # abre o modal de nova transação
     - type: click
+      ignoreScreenshot: true
       target:
         findQuery: //button[contains(.,'Nova transação')]
     
