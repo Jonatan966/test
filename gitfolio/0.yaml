@@ -1,4 +1,29 @@
-- teste: hello
-  teste2: mds
-- teste: oi
-  teste2: eba
+- actions:
+    # abre o modal de nova transação
+    - type: click
+      target:
+        findQuery: //button[contains(.,'Nova transação')]
+    
+    # preenche o formulário
+    - type: fill
+      targets:
+        - findQuery: //input[@placeholder='Título']
+          value: Compras do mês
+          
+        - findQuery: //input[@placeholder='Valor']
+          value: 500
+          
+        - findQuery: //input[@placeholder='Categoria']
+          value: Casa
+          
+    # muda o tipo da transação para Entrada e finaliza o cadastro
+    - type: click
+      targets: 
+        - findQuery: //button[contains(.,'Entrada')]
+        - findQuery: //button[contains(.,'Cadastrar')]
+       
+    # Altera o tema para escuro
+    - type: click
+      target:
+        findQuery: //div[@class='switcher']
+    
